@@ -13,6 +13,12 @@ html
     link rel='icon' type='image/png' href=asset_path('logo.png')
     link rel='apple-touch-icon' href=asset_path('logo.png')
 
+    = Gon::Base.render_data
+
+    link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+    script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+
     = stylesheet_link_tag 'application', 'data-turbo-track': 'reload'
     = javascript_include_tag 'application', 'data-turbo-track': 'reload', defer: true
   body
