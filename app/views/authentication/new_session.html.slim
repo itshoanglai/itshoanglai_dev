@@ -1,0 +1,43 @@
+.authentication_login_container
+  .left-panel
+    .logo
+      .logo-icon
+        = image_tag 'logo.png', alt: 'Hand2Heart', class: 'logo-img'
+      .logo-text
+        = 'HAND2HEART'
+    .welcome-text
+      h1
+        = 'Hello,'
+        br
+        = 'welcome back!'
+      p
+        = 'We’re glad to see you again. Log in to continue your journey with Hand2Heart.'
+      button.view-more-btn
+        = 'Learn more'
+  .right-panel
+    form
+      .form-group
+        label
+          = 'Email address'
+        .input-wrapper
+          .input-icon
+          input[type="email" placeholder="name@mail.com"]
+      .form-group
+        label
+          = 'Password'
+        .input-wrapper
+          .input-icon
+          input[type="password" placeholder="••••••••••••••"]
+      .form-options
+        label.remember-me
+          input[type="checkbox"]
+          span
+            = 'Remember me'
+        a.forgot-password[href="#"]
+          = 'Forgot password?'
+      button.login-btn[type="submit"]
+        = 'Login'
+      .signup-section
+        p.signup-text
+          = 'Not a member yet?'
+        = link_to "Sign up", register_path, class: "signup-btn"

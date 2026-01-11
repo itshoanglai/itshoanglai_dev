@@ -25,6 +25,9 @@ module ItshoanglaiDev
     config.time_zone = "Asia/Ho_Chi_Minh"
     config.active_record.default_timezone = :local
 
+    config.generators do |g|
+      g.template_engine :slim
+    end
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end

@@ -1,0 +1,78 @@
+.authentication_registration_container
+  .left-panel
+    .logo
+      .logo-icon
+        = image_tag 'logo.png', alt: 'Hand2Heart', class: 'logo-img'
+      .logo-text
+        = 'HAND2HEART'
+    .welcome-text
+      h1
+        = 'Create'
+        br
+        = 'Account!'
+      p
+        = 'Join us today and start your journey. It only takes a moment to get started.'
+      button.view-more-btn
+        = 'Learn more'
+  .right-panel
+    h2.form-title
+      = 'Sign up'
+    form
+      .form-group
+        label
+          = 'Full name'
+        .input-wrapper
+          .input-icon
+          input[type="text" placeholder="John Doe" required=""]
+      .form-group
+        label
+          = 'Email address'
+        .input-wrapper
+          .input-icon
+          input[type="email" placeholder="name@mail.com" required=""]
+      .form-row
+        .form-group
+          label
+            = 'Password'
+          .input-wrapper
+            .input-icon
+            input[type="password" placeholder="••••••••••••••" required=""]
+        .form-group
+          label
+            = 'Re-enter password'
+          .input-wrapper
+            .input-icon
+            input[type="password" placeholder="••••••••••••••" required=""]
+      .form-row
+        .form-group
+          label
+            = 'Sex'
+          .input-wrapper
+            .input-icon
+            select[required=""]
+              option[value=""]
+                = 'Select...'
+              option[value="male"]
+                = 'Male'
+              option[value="female"]
+                = 'Female'
+        .form-group
+          label
+            = 'Date of birth'
+          .input-wrapper
+            .input-icon
+            input[type="date" required=""]
+      .privacy-policy
+        input#privacy[type="checkbox" required=""]
+        label[for="privacy"]
+          = 'I agree to the '
+          a[href="#"]
+            = 'Terms of Service'
+          = ' and '
+          a[href="#"]
+            = 'Privacy Policy'
+      button.register-btn[type="submit"]
+        = 'Create account'
+      .login-link
+        = 'Already have an account? '
+        = link_to "Sign in", login_path, class: "login-button"

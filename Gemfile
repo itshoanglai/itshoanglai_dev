@@ -25,11 +25,17 @@ gem "jbuilder"
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 gem "bcrypt", "~> 3.1.7"
 
+# customized gems
 gem "sass-rails"
 gem "coffee-rails"
 gem "jquery-rails"
 gem "popper_js"
+
 gem "bootstrap", "~> 4.6"
+
+gem "slim-rails"
+
+gem "lograge"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]

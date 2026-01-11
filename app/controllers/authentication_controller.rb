@@ -1,16 +1,16 @@
 class AuthenticationController < ApplicationController
-  def new_session # login form
+  def new_session
   end
 
-  def create_session # submit login
+  def create_session
   end
 
-  def new_registration # sign-up form
+  def new_registration
   end
 
-  def create_registration # sign-up submit
+  def create_registration
   end
 
-  def destroy_session # logout
+  def destroy_session
   end
 end
