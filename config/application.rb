@@ -1,7 +1,9 @@
-require_relative "boot"
+# frozen_string_literal: true
 
-require "sprockets/railtie"
-require "rails/all"
+require_relative 'boot'
+
+require 'sprockets/railtie'
+require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -22,7 +24,7 @@ module ItshoanglaiDev
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
-    config.time_zone = "Asia/Ho_Chi_Minh"
+    config.time_zone = 'Asia/Ho_Chi_Minh'
     config.active_record.default_timezone = :local
 
     config.generators do |g|

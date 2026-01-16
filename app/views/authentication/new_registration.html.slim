@@ -16,52 +16,57 @@
         = 'Learn more'
   .right-panel
     h2.form-title
-      = 'Sign up'
-    form
+      = 'Create an account'
+    form#register_form
       .form-group
-        label
+        label[for="full_name"]
           = 'Full name'
         .input-wrapper
           .input-icon
-          input[type="text" placeholder="John Doe" required=""]
+          input#full_name[type="text" placeholder="John Doe" required="required"]
       .form-group
-        label
+        label[for='email']
           = 'Email address'
         .input-wrapper
           .input-icon
-          input[type="email" placeholder="name@mail.com" required=""]
+          input#email[type="email" placeholder="name@mail.com" required="required"]
+      .form-group
+        label[for='password']
+          = 'Password'
+        .input-wrapper.has-toggle
+          .input-icon
+          input#password[type="password" placeholder="••••••••••••••" required minlength="8"]
+          button.toggle-password[type="button" data-target="#password" aria-label="Show password"]
+            i.icon-eye
+
+      .form-group
+        label[for='confirm_password']
+          = 'Confirm password'
+        .input-wrapper.has-toggle
+          .input-icon
+          input#confirm_password[type="password" placeholder="••••••••••••••" required]
+          button.toggle-password[type="button" data-target="#confirm_password" aria-label="Show password"]
+            i.icon-eye
+
       .form-row
         .form-group
-          label
-            = 'Password'
+          label[for='gender']
+            = 'Gender'
           .input-wrapper
             .input-icon
-            input[type="password" placeholder="••••••••••••••" required=""]
-        .form-group
-          label
-            = 'Re-enter password'
-          .input-wrapper
-            .input-icon
-            input[type="password" placeholder="••••••••••••••" required=""]
-      .form-row
-        .form-group
-          label
-            = 'Sex'
-          .input-wrapper
-            .input-icon
-            select[required=""]
+            select#gender[required="required"]
               option[value=""]
-                = 'Select...'
+                = 'Select gender'
               option[value="male"]
                 = 'Male'
               option[value="female"]
                 = 'Female'
         .form-group
-          label
+          label[for='date_of_birth']
             = 'Date of birth'
           .input-wrapper
             .input-icon
-            input[type="date" required=""]
+            input#date_of_birth[type="date" required='required' value=@default_date_of_birth]
       .privacy-policy
         input#privacy[type="checkbox" required=""]
         label[for="privacy"]

@@ -476,6 +476,38 @@ body {
     }
   }
 
+  .input-wrapper.has-toggle {
+    position: relative;
+  }
+
+  .input-wrapper.has-toggle input {
+    padding-right: 44px; /* chừa chỗ cho icon */
+  }
+
+  .toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    color: #8fa2c7;
+  }
+
+  .toggle-password:hover {
+    color: #2457d3;
+  }
+
+  .toggle-password .icon-eye::before {
+    content: "👁"; /* tạm, thay bằng icon thật */
+  }
+
+  .toggle-password.active .icon-eye::before {
+    content: "🙈"; /* hoặc icon eye-off */
+  }
+
   .register-btn {
     width: 100%;
     background: #1e5dc9;

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2026_01_10_090729) do
+ActiveRecord::Schema[7.2].define(version: 2026_01_16_144410) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -26,8 +26,8 @@ ActiveRecord::Schema[7.2].define(version: 2026_01_10_090729) do
     t.string "nickname"
     t.string "role", null: false
     t.jsonb "app_settings", default: {}
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.timestamptz "created_at", precision: 6, null: false
+    t.timestamptz "updated_at", precision: 6, null: false
     t.index ["hashid"], name: "index_medical_staffs_on_hashid", unique: true
     t.index ["user_id"], name: "index_medical_staffs_on_user_id", unique: true
     t.index ["work_email"], name: "index_medical_staffs_on_work_email"
@@ -45,8 +45,8 @@ ActiveRecord::Schema[7.2].define(version: 2026_01_10_090729) do
     t.string "nickname"
     t.bigint "points", default: 0, null: false
     t.jsonb "app_settings", default: {}
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.timestamptz "created_at", precision: 6, null: false
+    t.timestamptz "updated_at", precision: 6, null: false
     t.index ["hashid"], name: "index_patients_on_hashid", unique: true
     t.index ["user_id"], name: "index_patients_on_user_id", unique: true
     t.index ["work_email"], name: "index_patients_on_work_email"
@@ -54,12 +54,12 @@ ActiveRecord::Schema[7.2].define(version: 2026_01_10_090729) do
 
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
-    t.string "encrypted_password", null: false
+    t.string "encrypted_password_digest", null: false
     t.string "hashid", null: false
     t.integer "failed_attempts", default: 0, null: false
     t.boolean "deactivated", default: false, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: 0, null: false
+    t.datetime "updated_at", precision: 0, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["hashid"], name: "index_users_on_hashid", unique: true
   end

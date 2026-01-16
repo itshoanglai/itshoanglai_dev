@@ -1,8 +1,108 @@
-# Omakase Ruby styling for Rails
-inherit_gem: { rubocop-rails-omakase: rubocop.yml }
+---
+plugins:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-capybara
 
-# Overwrite or add rules to create your own house style
-#
-# # Use `[a, [b, c]]` not `[ a, [ b, c ] ]`
-# Layout/SpaceInsideArrayLiteralBrackets:
-#   Enabled: false
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 3.2
+  Exclude:
+    - bin/*
+    - db/schema.rb
+    - db/migrate/*
+    - node_modules/**/*
+    - vendor/**/*
+    - gems/**/*
+
+Rails:
+  Enabled: true
+
+Rails/FilePath:
+  Enabled: false
+
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
+
+Rails/InverseOf:
+  Enabled: false
+
+Rails/RenderInline:
+  Enabled: true
+
+Rails/WhereNotWithMultipleConditions:
+  Enabled: false
+
+Rails/FindEach:
+  Enabled: false
+
+Rails/SkipsModelValidations:
+  Enabled: true
+  AllowedMethods:
+    - upsert_all
+
+Style/RedundantPercentQ:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/FormatStringToken:
+  Enabled: false
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashSyntax:
+  Enabled: true
+  EnforcedShorthandSyntax: either
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
+
+Style/ExponentialNotation:
+  Enabled: true
+
+Style/OptionalBooleanParameter:
+  Enabled: false
+
+Style/SafeNavigationChainLength:
+  Enabled: false
+
+Metrics:
+  Enabled: false
+
+Layout/EndOfLine:
+  Enabled: false
+
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+
+Layout/LineLength:
+  Max: 160
+  Exclude:
+    - 'db/schema.rb'
+    - 'test/*'
+    - 'test/*/*'
+    - app/helpers/amazon_gift_card_helper.rb
+
+Lint/DuplicateBranch:
+  Enabled: false
+
+Lint/RaiseException:
+  Enabled: true
+
+Lint/StructNewOverride:
+  Enabled: true
+
+Lint/UnexpectedBlockArity:
+  Enabled: true
+
+Naming/VariableNumber:
+  Enabled: false
+
+Performance/CollectionLiteralInLoop:
+  Enabled: false
