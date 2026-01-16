@@ -33,7 +33,7 @@ gem 'jquery-rails'
 gem 'popper_js'
 gem 'sass-rails'
 
-gem 'bootstrap', '~> 4.6'
+gem 'bootstrap', '~> 5.3'
 
 gem 'slim-rails'
 
